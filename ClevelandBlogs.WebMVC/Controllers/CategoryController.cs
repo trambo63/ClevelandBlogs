@@ -1,4 +1,6 @@
 ﻿using ClevelandBlogs.Models;
+using ClevelandBlogs.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +15,19 @@ namespace ClevelandBlogs.WebMVC.Controllers
         // GET: Category
         public ActionResult Index()
         {
-            var model = new CategoryListItem[0];
-            //Note: In the code above, we are initializing a new instance of the NoteListItem as an IEnumerable with the [0] syntax. This will satisfy some of the requirements for our Index View. When we added the List template for our view, it created some IEnumerable requirements for our list view. More on that later.
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CategoryService(userId);
+            var model = service.GetCategories();
             return View(model);
         }
 
         //GET 
         public ActionResult Create()
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CategoryService(userId);
+            var model = service.GetCategories();
+
             return View();
         }
 
@@ -28,11 +35,27 @@ namespace ClevelandBlogs.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CategoryCreate model)
         {
-            if (ModelState.IsValid)
-            {
+            if (!ModelState.IsValid) return View(model);
 
-            }
+            var service = CreateCategoryService();
+
+            if (service.CreateCategory(model))
+            {
+                TempData["SaveResult"] = "Your category was created.";
+                //TempData removes information after it's accessed
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Category could not be created.");
+
             return View(model);
+        }
+
+        private CategoryService CreateCategoryService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CategoryService(userId);
+            return service;
         }
     }
 }

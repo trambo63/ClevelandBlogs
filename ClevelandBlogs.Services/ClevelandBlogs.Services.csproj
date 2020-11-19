@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClevelandBlogs.Data\ClevelandBlogs.Data.csproj">
+      <Project>{1e6c1eda-42dd-4450-b4fd-e971e4c821d6}</Project>
+      <Name>ClevelandBlogs.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClevelandBlogs.Models\ClevelandBlogs.Models.csproj">
+      <Project>{84bcda79-5f9c-4890-869a-45c4ec32d79f}</Project>
+      <Name>ClevelandBlogs.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
