@@ -1,5 +1,7 @@
 ﻿using ClevelandBlogs.Models;
 using ClevelandBlogs.Models.PostModels;
+using ClevelandBlogs.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +16,10 @@ namespace ClevelandBlogs.WebMVC.Controllers
         // GET: Post
         public ActionResult Index()
         {
-            var model = new PostListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new PostService(userId);
+            var model = service.GetPosts();
+
             return View(model);
         }
 
@@ -27,11 +32,26 @@ namespace ClevelandBlogs.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(PostCreate model)
         {
-            if (ModelState.IsValid)
-            {
+            if (!ModelState.IsValid) return View(model);
 
-            }
+            var service = CreatePostService();
+
+            if (service.CreatePost(model))
+            {
+                TempData["SaveResult"] = "Your Blog Post was created.";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Blog Post could not be created.");
+
             return View(model);
+        }
+
+        private PostService CreatePostService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new PostService(userId);
+            return service;
         }
     }
 }
