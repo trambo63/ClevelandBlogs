@@ -16,5 +16,7 @@ namespace ClevelandBlogs.Data
         [Required]
         [Display(Name = "Category")]
         public string Title { get; set; }
+
+        public virtual ICollection<Post> Posts { get; set; } = new List<Post>();
     }
 }
