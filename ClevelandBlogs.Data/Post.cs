@@ -12,6 +12,8 @@ namespace ClevelandBlogs.Data
     {
         [Key]
         public int PostId { get; set; }
+        [Required]
+        public Guid OwnerId { get; set; }
 
         //[ForeignKey(nameof(Category))]
         public int CategoryId { get; set; }

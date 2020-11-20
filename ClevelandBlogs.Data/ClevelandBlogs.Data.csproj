@@ -56,12 +56,36 @@
   <ItemGroup>
     <Compile Include="Category.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202011191456091_InitialCreate.cs" />
+    <Compile Include="Migrations\202011191456091_InitialCreate.Designer.cs">
+      <DependentUpon>202011191456091_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011201713265_first.cs" />
+    <Compile Include="Migrations\202011201713265_first.Designer.cs">
+      <DependentUpon>202011201713265_first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011201735448_second.cs" />
+    <Compile Include="Migrations\202011201735448_second.Designer.cs">
+      <DependentUpon>202011201735448_second.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202011191456091_InitialCreate.resx">
+      <DependentUpon>202011191456091_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011201713265_first.resx">
+      <DependentUpon>202011201713265_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011201735448_second.resx">
+      <DependentUpon>202011201735448_second.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

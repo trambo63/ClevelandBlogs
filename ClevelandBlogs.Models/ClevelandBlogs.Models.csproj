@@ -58,6 +58,7 @@
     <Compile Include="CategoryModels\CategoryDetail.cs" />
     <Compile Include="CategoryModels\CategoryEdit.cs" />
     <Compile Include="CategoryModels\CategoryListItem.cs" />
+    <Compile Include="PostModels\PostCreate.cs" />
     <Compile Include="PostModels\PostListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

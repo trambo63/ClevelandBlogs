@@ -1,4 +1,5 @@
 ﻿using ClevelandBlogs.Models;
+using ClevelandBlogs.Models.PostModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,23 @@ namespace ClevelandBlogs.WebMVC.Controllers
         // GET: Post
         public ActionResult Index()
         {
-            var model = new CategoryListItem[0];
+            var model = new PostListItem[0];
+            return View(model);
+        }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(PostCreate model)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
             return View(model);
         }
     }
