@@ -109,7 +109,7 @@ namespace ClevelandBlogs.WebMVC.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeletePost(int id)
+        public ActionResult DeleteCategory(int id)
         {
             var service = CreateCategoryService();
 

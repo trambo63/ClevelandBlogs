@@ -47,6 +47,76 @@ namespace ClevelandBlogs.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreatePostService();
+            var model = svc.GetPostById(id);
+
+            return View(model);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreatePostService();
+            var detail = service.GetPostById(id);
+            var model =
+                new PostEdit
+                {
+                    PostId = detail.PostId,
+                    CategoryId = detail.CategoryId,
+                    Title = detail.Title,
+                    Content = detail.Content
+                };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, PostEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.PostId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreatePostService();
+
+            if (service.UpdatePost(model))
+            {
+                TempData["SaveResult"] = "Your post was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your post could not be updated.");
+            return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreatePostService();
+            var model = svc.GetPostById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreatePostService();
+
+            service.DeletePost(id);
+
+            TempData["SaveResult"] = "Your post was deleted";
+
+            return RedirectToAction("Index");
+        }
+
         private PostService CreatePostService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
