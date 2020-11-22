@@ -67,6 +67,10 @@
     <Compile Include="PostModels\PostEdit.cs" />
     <Compile Include="PostModels\PostListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReplyModels\ReplyListItem.cs" />
+    <Compile Include="ReplyModels\ReplyCreate.cs" />
+    <Compile Include="ReplyModels\ReplyDetail.cs" />
+    <Compile Include="ReplyModels\ReplyEdit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

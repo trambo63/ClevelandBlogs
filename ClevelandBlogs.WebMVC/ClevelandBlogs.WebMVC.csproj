@@ -169,9 +169,11 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PostController.cs" />
+    <Compile Include="Controllers\ReplyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -247,6 +249,16 @@
     <Content Include="Views\Post\Details.cshtml" />
     <Content Include="Views\Post\Edit.cshtml" />
     <Content Include="Views\Post\Delete.cshtml" />
+    <Content Include="Views\Comment\Index.cshtml" />
+    <Content Include="Views\Comment\Create.cshtml" />
+    <Content Include="Views\Comment\Details.cshtml" />
+    <Content Include="Views\Comment\Edit.cshtml" />
+    <Content Include="Views\Comment\Delete.cshtml" />
+    <Content Include="Views\Reply\Index.cshtml" />
+    <Content Include="Views\Reply\Create.cshtml" />
+    <Content Include="Views\Reply\Details.cshtml" />
+    <Content Include="Views\Reply\Edit.cshtml" />
+    <Content Include="Views\Reply\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
