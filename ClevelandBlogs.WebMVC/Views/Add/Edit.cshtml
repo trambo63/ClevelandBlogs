@@ -1,4 +1,4 @@
-﻿@model ClevelandBlogs.Models.CommentModels.CommentEdit
+﻿@model ClevelandBlogs.Models.AddModels.AddEdit
 
 @{
     ViewBag.Title = "Edit";
@@ -12,16 +12,16 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>CommentEdit</h4>
+    <h4>AddEdit</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.CommentId)
+    @Html.HiddenFor(model => model.AddId)
 
     <div class="form-group">
-        @Html.LabelFor(model => model.PostId, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.PostId, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.PostId, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
         </div>
     </div>
 
