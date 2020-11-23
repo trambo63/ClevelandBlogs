@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="IdentityModels.cs" />

@@ -54,6 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddModels\AddCreate.cs" />
+    <Compile Include="AddModels\AddDetail.cs" />
+    <Compile Include="AddModels\AddEdit.cs" />
+    <Compile Include="AddModels\AddListItem.cs" />
     <Compile Include="CategoryModels\CategoryCreate.cs" />
     <Compile Include="CategoryModels\CategoryDetail.cs" />
     <Compile Include="CategoryModels\CategoryEdit.cs" />
