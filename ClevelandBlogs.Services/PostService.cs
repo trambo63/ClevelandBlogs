@@ -81,6 +81,30 @@ namespace ClevelandBlogs.Services
             }
         }
 
+        public IEnumerable<PostListItemByCategoryId> GetAllPostByCategoryId(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Posts
+                        .Where(e => e.OwnerId == _userId && e.CategoryId == id)
+                        .Select(
+                            e =>
+                                new PostListItemByCategoryId
+                                {
+                                    PostId = e.PostId,
+                                    CategoryId = e.CategoryId,
+                                    Title = e.Title,
+                                    Content = e.Content,
+                                    CreatedUtc = e.CreatedUtc
+                                }
+                        );
+
+                return query.ToArray();
+            }
+        }
+
         public bool UpdatePost(PostEdit model)
         {
             using (var ctx = new ApplicationDbContext())

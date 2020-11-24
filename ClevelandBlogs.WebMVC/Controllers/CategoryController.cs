@@ -59,6 +59,23 @@ namespace ClevelandBlogs.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult GetAllPostsByCategoryId(int id)
+        {
+            var svc = CreatePostService();
+            var model = svc.GetAllPostByCategoryId(id);
+
+            return View(model);
+        }
+
+        public ActionResult DetailsPost(int id)
+        {
+            var svc = CreatePostService();
+            var model = svc.GetPostById(id);
+
+            return View(model);
+        }
+
+
         public ActionResult Edit(int id)
         {
             var service = CreateCategoryService();
@@ -124,6 +141,13 @@ namespace ClevelandBlogs.WebMVC.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CategoryService(userId);
+            return service;
+        }
+
+        private PostService CreatePostService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new PostService(userId);
             return service;
         }
     }

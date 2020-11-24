@@ -1,4 +1,5 @@
 ﻿using ClevelandBlogs.Data;
+using ClevelandBlogs.Models.CategoryModels;
 using ClevelandBlogs.Models.CommentModels;
 using System;
 using System.Collections.Generic;
@@ -75,6 +76,29 @@ namespace ClevelandBlogs.Services
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc
                     };
+            }
+        }
+
+        public IEnumerable<CommentListItemByPostId> GetAllCommentsByPostId(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Comments
+                        .Where(e => e.OwnerId == _userId && e.PostId == id)
+                        .Select(
+                            e =>
+                                new CommentListItemByPostId
+                                {
+                                    CommentId = e.CommentId,
+                                    PostId = e.PostId,
+                                    Content = e.Content,
+                                    CreatedUtc = e.CreatedUtc
+                                }
+                        );
+
+                return query.ToArray();
             }
         }
 

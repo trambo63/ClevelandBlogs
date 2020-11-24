@@ -45,7 +45,7 @@ namespace ClevelandBlogs.WebMVC.Controllers
             return View(model);
         }
 
-        public ActionResult Details(int id)
+        public ActionResult DetailsComment(int id)
         {
             var svc = CreateCommentService();
             var model = svc.GetCommentById(id);

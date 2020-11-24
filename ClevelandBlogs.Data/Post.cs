@@ -16,9 +16,9 @@ namespace ClevelandBlogs.Data
         public Guid OwnerId { get; set; }
 
         [Required]
-        //[ForeignKey(nameof(Category))]
+        [ForeignKey(nameof(Category))]
         public int CategoryId { get; set; }
-        //public virtual Category Category { get; set; }
+        public virtual Category Category { get; set; }
 
         [Required]
         public string Title { get; set; }

@@ -47,13 +47,21 @@ namespace ClevelandBlogs.WebMVC.Controllers
             return View(model);
         }
 
-        public ActionResult Details(int id)
+        public ActionResult DetailsPost(int id)
         {
             var svc = CreatePostService();
             var model = svc.GetPostById(id);
 
             return View(model);
         }
+
+        //public ActionResult GetAllPostsByCategoryId(int id)
+        //{
+        //    var svc = CreatePostService();
+        //    var model = svc.GetAllPostByCategoryId(id);
+
+        //    return View(model);
+        //}
 
         public ActionResult Edit(int id)
         {

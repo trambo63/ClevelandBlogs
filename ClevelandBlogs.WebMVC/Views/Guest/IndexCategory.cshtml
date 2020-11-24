@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ClevelandBlogs.Models.CategoryListItem>
+
+@{
+    ViewBag.Title = "IndexCategory";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.ActionLink("All Posts", "GetAllPostsByCategoryId", new { id = item.CategoryId })
+        </td>
+    </tr>
+}
+
+</table>
