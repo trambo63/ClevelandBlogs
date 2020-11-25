@@ -79,6 +79,29 @@ namespace ClevelandBlogs.Services
             }
         }
 
+        public IEnumerable<ReplyListItemByCommentId> GetAllRepliesByCommentId(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Replies
+                        .Where(e => e.OwnerId == _userId && e.CommentId == id)
+                        .Select(
+                            e =>
+                                new ReplyListItemByCommentId
+                                {
+                                    ReplyId = e.ReplyId,
+                                    CommentId = e.CommentId,
+                                    Content = e.Content,
+                                    CreatedUtc = e.CreatedUtc
+                                }
+                        );
+
+                return query.ToArray();
+            }
+        }
+
         public bool UpdateReply(ReplyEdit model)
         {
             using (var ctx = new ApplicationDbContext())

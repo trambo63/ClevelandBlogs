@@ -19,6 +19,15 @@ namespace ClevelandBlogs.WebMVC.Controllers
             var model = service.GetCategories();
             return View(model);
         }
+
+        public ActionResult DetailsPost(int id)
+        {
+            var svc = CreatePostService();
+            var model = svc.GetPostById(id);
+
+            return View(model);
+        }
+
         public ActionResult GetAllPostsByCategoryId(int id)
         {
             var svc = CreatePostService();
@@ -67,6 +76,14 @@ namespace ClevelandBlogs.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult GetAllRepliesByCommentId(int id)
+        {
+            var svc = CreateReplyService();
+            var model = svc.GetAllRepliesByCommentId(id);
+
+            return View(model);
+        }
+
         public ActionResult IndexAdd()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -77,13 +94,6 @@ namespace ClevelandBlogs.WebMVC.Controllers
         }
 
 
-        public ActionResult DetailsPost(int id)
-        {
-            var svc = CreatePostService();
-            var model = svc.GetPostById(id);
-
-            return View(model);
-        }
 
         private CategoryService CreateCategoryService()
         {
@@ -110,6 +120,13 @@ namespace ClevelandBlogs.WebMVC.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CommentService(userId);
+            return service;
+        }
+
+        private ReplyService CreateReplyService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ReplyService(userId);
             return service;
         }
     }

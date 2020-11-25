@@ -1,21 +1,21 @@
-﻿@model IEnumerable<ClevelandBlogs.Models.CategoryModels.CommentListItemByPostId>
+﻿@model IEnumerable<ClevelandBlogs.Models.ReplyModels.ReplyListItemByCommentId>
 
 @{
-    ViewBag.Title = "GetAllCommentsByPostId";
+    ViewBag.Title = "GetAllRepliesByCommentId";
 }
 
-<h2>GetAllCommentsByPostId</h2>
+<h2>GetAllRepliesByCommentId</h2>
 
 <p>
-    @Html.ActionLink("Create New", "CreateComment")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CommentId)
+            @Html.DisplayNameFor(model => model.ReplyId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PostId)
+            @Html.DisplayNameFor(model => model.CommentId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Content)
@@ -29,10 +29,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.CommentId)
+            @Html.DisplayFor(modelItem => item.ReplyId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PostId)
+            @Html.DisplayFor(modelItem => item.CommentId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Content)
@@ -41,8 +41,8 @@
             @Html.DisplayFor(modelItem => item.CreatedUtc)
         </td>
         <td>
-            @Html.ActionLink("Replies", "GetAllRepliesByCommentId", new { id=item.CommentId }) |
-            @Html.ActionLink("Details", "DetailsComment", new { id=item.CommentId }) |
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>
     </tr>

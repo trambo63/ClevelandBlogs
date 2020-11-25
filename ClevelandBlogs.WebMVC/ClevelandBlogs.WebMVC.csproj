@@ -273,6 +273,7 @@
     <Content Include="Views\Guest\CreateComment.cshtml" />
     <Content Include="Views\Guest\DetailsComment.cshtml" />
     <Content Include="Views\Guest\GetAllCommentsByPostId.cshtml" />
+    <Content Include="Views\Guest\GetAllRepliesByCommentId.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
