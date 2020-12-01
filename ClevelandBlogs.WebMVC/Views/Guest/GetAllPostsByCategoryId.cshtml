@@ -38,7 +38,8 @@
                     <div class="card-body">
                         <h2 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h2>
                         <img class="card-img-top" src="~/Assets/dj-johnson-jYtgDr-0AyM-unsplash.jpg" alt="Card image cap" style="width: 10rem">
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-
+                           ">With supporting text below as a natural lead-in to additional content.</p>
                         <a href="@Url.Action("GetAllCommentsByPostId", new { id = item.PostId })" class="btn btn-primary">View Comments</a>
                         <a href="@Url.Action("DetailsPost", new { id = item.PostId })" class="btn btn-primary">View Post</a>
                     </div>

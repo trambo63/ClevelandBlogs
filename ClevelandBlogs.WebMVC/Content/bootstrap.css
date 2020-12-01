@@ -10,6 +10,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
+    font-family: 'Russo One', sans-serif !important;
     margin: 0;
     background-image: url("../Assets/dj-johnson-pqU0Q2zsZyU-unsplash.jpg");
     background-size: cover;
