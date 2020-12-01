@@ -185,6 +185,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\2019_CLE_wbg.png" />
+    <Content Include="Assets\Cleblogs.png" />
+    <Content Include="Assets\dj-johnson-jYtgDr-0AyM-unsplash.jpg" />
+    <Content Include="Assets\dj-johnson-pqU0Q2zsZyU-unsplash.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />

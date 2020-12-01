@@ -2,15 +2,17 @@
  * Bootstrap v3.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+ 
+! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
+    margin: 0;
+    background-image: url("../Assets/dj-johnson-pqU0Q2zsZyU-unsplash.jpg");
+    background-size: cover;
 }
 article,
 aside,
@@ -5031,24 +5033,30 @@ a.badge:focus {
 .nav-pills > li > a > .badge {
   margin-left: 3px;
 }
+.jumbotron h1,
+.jumbotron .h1 {
+    text-align: center;
+    color: blue;
+}
+.jumbotron p {
+    margin-bottom: 15px;
+    font-size: 21px;
+    font-weight: 200;
+    text-align: center;
+    color: blueviolet;
+}
 .jumbotron {
   padding-top: 30px;
   padding-bottom: 30px;
+  margin-top: 100px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #eeeeee;
+  background-color: cornflowerblue; 
+  opacity: 0.2;
 }
-.jumbotron h1,
-.jumbotron .h1 {
-  color: inherit;
-}
-.jumbotron p {
-  margin-bottom: 15px;
-  font-size: 21px;
-  font-weight: 200;
-}
+
 .jumbotron > hr {
-  border-top-color: #d5d5d5;
+    border-top-color: #d5d5d5;
 }
 .container .jumbotron,
 .container-fluid .jumbotron {

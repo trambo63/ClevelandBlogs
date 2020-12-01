@@ -4,34 +4,56 @@
     ViewBag.Title = "IndexCategory";
 }
 
-<h2>Index</h2>
+<h2>Topics</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CategoryId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CategoryId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.ActionLink("All Posts", "GetAllPostsByCategoryId", new { id = item.CategoryId })
-        </td>
-    </tr>
-}
 
-</table>
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Sports</h2>
+                <img class="card-img-top" src="~/Assets/dj-johnson-jYtgDr-0AyM-unsplash.jpg" alt="Card image cap" style="width: 10rem">
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="@Url.Action("GetAllPostsByCategoryId", new { id = 1 })" class="btn btn-primary">View Posts</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Politics</h2>
+                <img class="card-img-top" src="~/Assets/dj-johnson-jYtgDr-0AyM-unsplash.jpg" alt="Card image cap" style="width: 10rem">
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="@Url.Action("GetAllPostsByCategoryId", new { id = 3 })" class="btn btn-primary">View Posts</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    @foreach (var item in Model)
+    {
+        @*<div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="~/Assets/dj-johnson-jYtgDr-0AyM-unsplash.jpg" alt="Card image cap" style="width: 10rem">
+            <div class="card-body">
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
+                <a href="@Url.Action("GetAllPostsByCategoryId", new { id = 1 })" class="btn btn-primary">View Posts</a>
+            </div>
+        </div>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.ActionLink("All Posts", "GetAllPostsByCategoryId", new { id = item.CategoryId })
+            </td>
+        </tr>*@
+    }
+
