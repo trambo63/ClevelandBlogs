@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.PostId)
@@ -27,30 +27,45 @@
             @Html.DisplayNameFor(model => model.CreatedUtc)
         </th>
         <th></th>
-    </tr>
+    </tr>*@
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.PostId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CategoryId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Content)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedUtc)
-        </td>
-        <td>
-            @Html.ActionLink("View Comments", "GetAllCommentsByPostId", new { id = item.PostId })
-            @Html.ActionLink("View Post", "DetailsPost", new { id = item.PostId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
 
-</table>
+        <div class="col-md-6">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h2>
+                        <img class="card-img-top" src="~/Assets/dj-johnson-jYtgDr-0AyM-unsplash.jpg" alt="Card image cap" style="width: 10rem">
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="@Url.Action("GetAllCommentsByPostId", new { id = item.PostId })" class="btn btn-primary">View Comments</a>
+                        <a href="@Url.Action("DetailsPost", new { id = item.PostId })" class="btn btn-primary">View Post</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            @*<tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PostId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CategoryId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Content)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedUtc)
+                    </td>
+                    <td>
+                        @Html.ActionLink("View Comments", "GetAllCommentsByPostId", new { id = item.PostId })
+                        @Html.ActionLink("View Post", "DetailsPost", new { id = item.PostId })
+                    </td>
+                </tr>*@
+            }
+
+    </table>

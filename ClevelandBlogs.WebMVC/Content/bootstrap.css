@@ -3213,9 +3213,9 @@ fieldset[disabled] .btn-default.focus {
   background-color: #333;
 }
 .btn-primary {
-  color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
+color: #fff;
+background-color: rgba(0, 0, 255, 0.5);
+border-color: #2e6da4;
 }
 .btn-primary:focus,
 .btn-primary.focus {
@@ -5035,24 +5035,26 @@ a.badge:focus {
 }
 .jumbotron h1,
 .jumbotron .h1 {
+    font-family: 'Russo One', sans-serif;
     text-align: center;
-    color: blue;
+    color: blueviolet;
 }
 .jumbotron p {
+    font-family: 'Russo One', sans-serif;
     margin-bottom: 15px;
     font-size: 21px;
     font-weight: 200;
     text-align: center;
-    color: blueviolet;
+    color: darkslateblue;
 }
 .jumbotron {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-top: 100px;
-  margin-bottom: 30px;
-  color: inherit;
-  background-color: cornflowerblue; 
-  opacity: 0.2;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: rgba(0, 0, 255, 0.3);
+    /*opacity: 0.2;*/
 }
 
 .jumbotron > hr {

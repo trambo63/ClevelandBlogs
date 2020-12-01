@@ -3,10 +3,10 @@
 }
 
 <div class="jumbotron">
-    <h1><img src="~/Assets/Cleblogs.png"/></h1>
+    <h1>@*<img src="~/Assets/91fa0f8d-792e-44cf-8ecb-b875a512162f_200x200.png" style="width: 200px"/>*@Cleveland Blogs</h1>
     <p class="lead">Welcome to Cleveland Blogs!</p>
     <div class="text-center">
-        <button type="button" class="btn btn-primary">@Html.ActionLink("Topics", "IndexCategory", "Guest")</button>
+        <a href="@Url.Action("IndexCategory", "Guest")" class="btn btn-primary">Enter</a>
     </div>
 </div>
 

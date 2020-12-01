@@ -186,6 +186,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\2019_CLE_wbg.png" />
+    <Content Include="Assets\91fa0f8d-792e-44cf-8ecb-b875a512162f_200x200.png" />
+    <Content Include="Assets\Cleblogs %281%29 %282%29.png" />
     <Content Include="Assets\Cleblogs.png" />
     <Content Include="Assets\dj-johnson-jYtgDr-0AyM-unsplash.jpg" />
     <Content Include="Assets\dj-johnson-pqU0Q2zsZyU-unsplash.jpg" />
