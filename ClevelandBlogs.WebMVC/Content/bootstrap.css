@@ -15,6 +15,20 @@ body {
     background-image: url("../Assets/dj-johnson-pqU0Q2zsZyU-unsplash.jpg");
     background-size: cover;
 }
+.container body-content {
+   
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #2F2E2D;
+    color: dimgrey;
+    text-align: center;
+}
+
 article,
 aside,
 details,
@@ -5038,7 +5052,7 @@ a.badge:focus {
 .jumbotron .h1 {
     font-family: 'Russo One', sans-serif;
     text-align: center;
-    color: blueviolet;
+    color: dimgrey;
 }
 .jumbotron p {
     font-family: 'Russo One', sans-serif;
@@ -6842,4 +6856,7 @@ button.close {
     display: none !important;
   }
 }
+
+
+
 /*# sourceMappingURL=bootstrap.css.map */
