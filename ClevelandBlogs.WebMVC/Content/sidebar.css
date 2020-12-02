@@ -5,8 +5,8 @@
     width: 0;
     height: 100%;
     overflow-y: hidden;
-    background: rgba(0, 0, 255, 0.3);
-    border: darkslateblue solid;
+    background: rgba(0, 0, 255, 0.6);
+    /*border: darkslateblue solid;*/
     /*opacity: 0.9;*/
 }
 
@@ -23,11 +23,11 @@ a:hover {
 
 /* Change the width of the sidebar to fit the display*/
 #wrapper.menuDisplayed #sidebar-wrapper{
-    width: 250px;
+    width: 150px;
 }
 
 #wrapper.menuDisplayed #page-content-wrapper {
-    padding-left: 250px;
+    padding-left: 100px;
 }
     .nav .open > a,
     .nav .open > a:hover,
