@@ -13,6 +13,7 @@ body {
     font-family: 'Russo One', sans-serif !important;
     margin: 0;
     background-image: url("../Assets/dj-johnson-pqU0Q2zsZyU-unsplash.jpg");
+    background-attachment: fixed;
     background-size: cover;
 }
 .container body-content {
