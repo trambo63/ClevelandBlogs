@@ -4,15 +4,13 @@
     ViewBag.Title = "GetAllCommentsByPostId";
 }
 
-<h2>GetAllCommentsByPostId</h2>
-
-<p>
+@*<p>
     @Html.ActionLink("Create New", "CreateComment")
-</p>
+</p>*@
 
 @foreach (var item in Model)
 {
-    <section class="blog-posts py-4">
+    <section class="blog-posts">
         <div class="row">
             <div class="col-md-8">
                 <article class="blog-posts">
@@ -22,7 +20,6 @@
                         </div>
                         <div class="col-sm-9">
                             <p>@Html.DisplayFor(modelItem => item.Content)</p>
-                            @*<a href="@Url.Action("DetailsPost", new { id = item.PostId })" class="btn btn-primary">Back to Post</a>*@
                             <a href="@Url.Action("GetAllRepliesByCommentId", new { id=item.CommentId })" class="btn btn-primary">View Replies</a>
                         </div>
                     </div>

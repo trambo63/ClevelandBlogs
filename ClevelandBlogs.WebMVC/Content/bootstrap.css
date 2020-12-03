@@ -26,9 +26,42 @@ footer {
     bottom: 0;
     width: 100%;
     background-color: rgba(0, 0, 255, 0.9);
-    color: dimgrey;
+    color: ghostwhite;
     text-align: center;
 }
+
+.blog-posts{
+    padding-left: 100px;
+}
+
+.blog-posts h3 {
+    color: ghostwhite;
+}
+
+.blog-posts p {
+    color: lightgray;
+}
+
+.post-body {
+    padding-left: 300px;
+}
+
+.post-body h1{
+    color: ghostwhite;
+}
+
+.post-body p{
+    color: lightgray;
+}
+
+.post-body h4 {
+    color: ghostwhite;
+}
+
+.post-body h5 {
+    color: lightgray;
+}
+
 
 article,
 aside,
@@ -43,7 +76,7 @@ menu,
 nav,
 section,
 summary {
-  display: block;
+    display: block;
 }
 audio,
 canvas,
@@ -1355,7 +1388,7 @@ mark,
   color: #777777;
 }
 .text-primary {
-  color: #337ab7;
+  color: ghostwhite;
 }
 a.text-primary:hover,
 a.text-primary:focus {
@@ -5054,7 +5087,7 @@ a.badge:focus {
 .jumbotron .h1 {
     font-family: 'Russo One', sans-serif;
     text-align: center;
-    color: dimgrey;
+    color: ghostwhite;
 }
 .jumbotron p {
     font-family: 'Russo One', sans-serif;

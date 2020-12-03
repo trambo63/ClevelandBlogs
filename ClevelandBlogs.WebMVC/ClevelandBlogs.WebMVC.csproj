@@ -255,7 +255,7 @@
     <Content Include="Views\DisplayTemplates\DateTimeOffset.cshtml" />
     <Content Include="Views\Post\Index.cshtml" />
     <Content Include="Views\Post\Create.cshtml" />
-    <Content Include="Views\Post\DetailsPost.cshtml" />
+    <Content Include="Views\Post\Details.cshtml" />
     <Content Include="Views\Post\Edit.cshtml" />
     <Content Include="Views\Post\Delete.cshtml" />
     <Content Include="Views\Comment\Index.cshtml" />

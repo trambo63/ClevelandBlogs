@@ -4,8 +4,6 @@
     ViewBag.Title = "IndexCategory";
 }
 
-<h1>Topics</h1>
-
 @*<p>
     @Html.ActionLink("Create New", "Create")
 </p>*@
@@ -13,24 +11,33 @@
 
 
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <div class="card">
             <div class="card-body">
-                <h2 class="card-title" style="color: dimgrey">Sports</h2>
+                <h2 class="card-title" style="color: ghostwhite">Sports</h2>
                 <img class="card-img-top" src="~/Assets/dj-johnson-jYtgDr-0AyM-unsplash.jpg" alt="Card image cap" style="width: 10rem">
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text" style="color: lightgray">With supporting text below as a natural lead-in to additional content.</p>
                 <a href="@Url.Action("GetAllPostsByCategoryId", new { id = 1 })" class="btn btn-primary">View Posts</a>
             </div>
         </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <div class="card">
             <div class="card-body">
-                <h2 class="card-title" style="color: dimgrey">Politics</h2>
+                <h2 class="card-title" style="color: ghostwhite">Politics</h2>
                 <img class="card-img-top" src="~/Assets/dj-johnson-jYtgDr-0AyM-unsplash.jpg" alt="Card image cap" style="width: 10rem">
-                <p class="card-
-                   ">With supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text" style="color: lightgray">With supporting text below as a natural lead-in to additional content.</p>
                 <a href="@Url.Action("GetAllPostsByCategoryId", new { id = 3 })" class="btn btn-primary">View Posts</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title" style="color: ghostwhite">Local News</h2>
+                <img class="card-img-top" src="~/Assets/dj-johnson-jYtgDr-0AyM-unsplash.jpg" alt="Card image cap" style="width: 10rem">
+                <p class="card-text" style="color: lightgray">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="@Url.Action("GetAllPostsByCategoryId", new { id = 4 })" class="btn btn-primary">View Posts</a>
             </div>
         </div>
     </div>

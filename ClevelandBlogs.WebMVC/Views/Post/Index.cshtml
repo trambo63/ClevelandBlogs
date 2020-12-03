@@ -4,11 +4,8 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@*<h2>My Posts</h2>*@
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 @if (TempData.ContainsKey("SaveResult"))
 {
     <div class="alert alert-success fade in" role="alert">
@@ -19,7 +16,7 @@
         @TempData["SaveResult"]
     </div>
 }
-<table class="table">
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.PostId)
@@ -37,11 +34,49 @@
             @Html.DisplayNameFor(model => model.CreatedUtc)
         </th>
         <th></th>
-    </tr>
+    </tr>*@
+<div>
+    <a class="social-link py-4 w-100">
+        @Html.ActionLink("Create New", "Create")
+    </a>
+</div>
 
-    @foreach (var item in Model)
-    {
-        <tr>
+@foreach (var item in Model)
+{
+    <section class="post-body">
+        <div class="row">
+            <div class="col-lg-8">
+                @*<img class="img-fluid img-rounded" alt="" src="~/Assets/dj-johnson-jYtgDr-0AyM-unsplash.jpg" style="width: 50rem"/>*@
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h1>@Html.DisplayFor(model => item.Title)</h1>
+                        <h4>@Html.DisplayNameFor(model => model.CreatedUtc)</h4>
+                        <h5>@Html.DisplayFor(model => item.CreatedUtc)</h5>
+                    </div>
+                </div>
+            </div>
+            <aside class="col-md-1">
+                <div class="row">
+                    <div class"col-sm-4">
+                        <a>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.PostId })
+                        </a>
+                    </div>
+                    <div class"col-sm-4">
+                        <a>
+                            @Html.ActionLink("Details", "Details", new { id = item.PostId })
+                        </a>
+                    </div>
+                    <div>
+                        <a class="social-link py-4 w-100">
+                            @Html.ActionLink("Delete", "Delete", new { id = item.PostId })
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+    @*<tr>
             <td>
                 @Html.DisplayFor(modelItem => item.PostId)
             </td>
@@ -58,12 +93,12 @@
                 @Html.DisplayFor(modelItem => item.CreatedUtc)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.PostId  }) |
-                @Html.ActionLink("Details", "Details", new { id=item.PostId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.PostId }) 
+                @Html.ActionLink("Edit", "Edit", new { id = item.PostId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PostId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PostId })
 
             </td>
-        </tr>
-    }
+        </tr>*@
+}
 
-</table>
+@*</table>*@

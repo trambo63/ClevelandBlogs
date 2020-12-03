@@ -4,23 +4,22 @@
     ViewBag.Title = "GetAllPostsByCategoryId";
 }
 
-<h2>GetAllPostsByCategoryId</h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
 
     @foreach (var item in Model)
     {
-        <section class="blog-posts py-4">
+        <section class="blog-posts">
             <div class="row">
                 <div class="col-md-8">
                     <article class="blog-posts">
                         <div class="row">
-                            <div class="col-md-3">
-                                <img class="img-fluid img-rounded" alt="" src="~/Assets/dj-johnson-jYtgDr-0AyM-unsplash.jpg" style="width: 20rem" />
+                            <div class="col-md-2">
+                                <img class="img-fluid img-rounded" alt="" src="~/Assets/dj-johnson-jYtgDr-0AyM-unsplash.jpg" style="width: 10rem" />
                             </div>
-                            <div class="col-md-9">
+                            <div class="col-md-10">
                                 <h3>@Html.DisplayFor(modelItem => item.Title)</h3>
                                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
                                 <a href="@Url.Action("DetailsPost", new { id = item.PostId })" class="btn btn-primary">View Post</a>
@@ -29,7 +28,7 @@
                         </div>
                     </article>
                 </div>
-                <aside class="col-md-4">
+                <aside class="col-md-1">
                     <div class="row">
                         <div class"col-sm-4">
                             <a>
