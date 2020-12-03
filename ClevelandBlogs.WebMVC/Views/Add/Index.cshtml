@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>AddsAdmin</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -19,44 +19,40 @@
         @TempData["SaveResult"]
     </div>
 }
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.AddId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Content)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </th>
-        <th></th>
-    </tr>
+@foreach (var item in Model)
+{
+    <section class="post-body">
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h5>@Html.DisplayFor(modelItem => item.AddId)</h5>
+                        <h5>@Html.DisplayFor(modelItem => item.Title)</h5>
+                        <h5>@Html.DisplayFor(modelItem => item.Content)</h5>
+                        <h5>@Html.DisplayFor(modelItem => item.CreatedUtc)</h5>
+                    </div>
+                </div>
+            </div>
+            <aside class="col-md-1">
+                <div class="row">
+                    <div class"col-sm-4">
+                        <a>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.AddId })
+                        </a>
+                    </div>
+                    <div class"col-sm-4">
+                        <a>
+                            @Html.ActionLink("Details", "Details", new { id = item.AddId })
+                        </a>
+                    </div>
+                    <div>
+                        <a class="social-link py-4 w-100">
+                            @Html.ActionLink("Delete", "Delete", new { id = item.AddId })
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+}
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.AddId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Content)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedUtc)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.AddId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.AddId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.AddId })
-            </td>
-        </tr>
-    }
-
-</table>

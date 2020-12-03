@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>CategoriesAdmin</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -21,33 +21,39 @@
     </div>
 }
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CategoryId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-    </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CategoryId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                
-                @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.CategoryId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId }) |
-                @Html.ActionLink("All Posts", "GetAllPostsByCategoryId", new { id = item.CategoryId })
-            </td>
-        </tr>
-    }
+@foreach (var item in Model)
+{
+    <section class="post-body">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h5>@Html.DisplayFor(modelItem => item.CategoryId)</h5>
+                        <h5>@Html.DisplayFor(modelItem => item.Title)</h5>
+                    </div>
+                </div>
+            </div>
+            <aside class="col-md-1">
+                <div class="row">
+                    <div class"col-sm-4">
+                        <a>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId })
+                        </a>
+                    </div>
+                    <div class"col-sm-4">
+                        <a>
+                            @Html.ActionLink("Details", "Details", new { id = item.CategoryId })
+                        </a>
+                    </div>
+                    <div>
+                        <a class="social-link py-4 w-100">
+                            @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId })
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+}
 
-</table>

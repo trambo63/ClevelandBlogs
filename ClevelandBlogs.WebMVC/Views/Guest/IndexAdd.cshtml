@@ -4,12 +4,10 @@
     ViewBag.Title = "IndexAdd";
 }
 
-<h2>IndexAdd</h2>
-
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+</p>*@
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.AddId)
@@ -24,23 +22,62 @@
             @Html.DisplayNameFor(model => model.CreatedUtc)
         </th>
         <th></th>
-    </tr>
+    </tr>*@
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AddId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Content)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedUtc)
-        </td>
-    </tr>
+@foreach (var item in Model)
+{
+    <section class="blog-posts">
+        <div class="row">
+            <div class="col-md-8">
+                <article class="blog-posts">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="img-fluid img-rounded" alt="" src="~/Assets/dj-johnson-jYtgDr-0AyM-unsplash.jpg" style="width: 10rem" />
+                        </div>
+                        <div class="col-md-10">
+                            <h3>@Html.DisplayFor(modelItem => item.Title)</h3>
+                            <p>@Html.DisplayFor(modelItem => item.Content)</p>
+                            @*<a href="#" class="btn btn-primary">Contact</a>
+                            <a href="#" class="btn btn-primary">View Comments</a>*@
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <aside class="col-md-1">
+                <div class="row">
+                    <div class"col-sm-4">
+                        <a>
+                            <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class"col-sm-4">
+                        <a>
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a class="social-link py-4 w-100">
+                            <i class="fa fa-youtube" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+    @*<tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedUtc)
+            </td>
+        </tr>*@
 }
 
-</table>
+@*</table>*@
