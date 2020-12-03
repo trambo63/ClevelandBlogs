@@ -4,7 +4,6 @@
     ViewBag.Title = "Index";
 }
 
-@*<h2>My Posts</h2>*@
 
 @if (TempData.ContainsKey("SaveResult"))
 {
@@ -16,25 +15,6 @@
         @TempData["SaveResult"]
     </div>
 }
-@*<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.PostId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CategoryId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Content)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </th>
-        <th></th>
-    </tr>*@
 <div>
     <a class="social-link py-4 w-100">
         @Html.ActionLink("Create New", "Create")
@@ -76,29 +56,5 @@
             </aside>
         </div>
     </section>
-    @*<tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PostId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CategoryId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Content)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedUtc)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.PostId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.PostId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.PostId })
-
-            </td>
-        </tr>*@
 }
 
-@*</table>*@
