@@ -24,7 +24,7 @@
     <div class="col-sm-4">
         <div class="card">
             <div class="card-body">
-                <h2 class="card-title" style="color: ghostwhite">Politics</h2>
+                <h2 class="card-title" style="color: ghostwhite">Entertainment</h2>
                 <img class="card-img-top" src="~/Assets/dj-johnson-jYtgDr-0AyM-unsplash.jpg" alt="Card image cap" style="width: 10rem">
                 <p class="card-text" style="color: lightgray">With supporting text below as a natural lead-in to additional content.</p>
                 <a href="@Url.Action("GetAllPostsByCategoryId", new { id = 2 })" class="btn btn-primary">View Posts</a>
@@ -41,27 +41,37 @@
             </div>
         </div>
     </div>
-</div>
-
-    @foreach (var item in Model)
-    {
-        @*<div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="~/Assets/dj-johnson-jYtgDr-0AyM-unsplash.jpg" alt="Card image cap" style="width: 10rem">
+    <div class="col-sm-4">
+        <div class="card">
             <div class="card-body">
-                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
-                <a href="@Url.Action("GetAllPostsByCategoryId", new { id = 1 })" class="btn btn-primary">View Posts</a>
+                <h2 class="card-title" style="color: ghostwhite">Politics</h2>
+                <img class="card-img-top" src="~/Assets/dj-johnson-jYtgDr-0AyM-unsplash.jpg" alt="Card image cap" style="width: 10rem">
+                <p class="card-text" style="color: lightgray">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="@Url.Action("GetAllPostsByCategoryId", new { id = 4 })" class="btn btn-primary">View Posts</a>
             </div>
         </div>
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CategoryId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.ActionLink("All Posts", "GetAllPostsByCategoryId", new { id = item.CategoryId })
-            </td>
-        </tr>*@
-    }
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title" style="color: ghostwhite">Art</h2>
+                <img class="card-img-top" src="~/Assets/dj-johnson-jYtgDr-0AyM-unsplash.jpg" alt="Card image cap" style="width: 10rem">
+                <p class="card-text" style="color: lightgray">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="@Url.Action("GetAllPostsByCategoryId", new { id = 5 })" class="btn btn-primary">View Posts</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title" style="color: ghostwhite">Random</h2>
+                <img class="card-img-top" src="~/Assets/dj-johnson-jYtgDr-0AyM-unsplash.jpg" alt="Card image cap" style="width: 10rem">
+                <p class="card-text" style="color: lightgray">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="@Url.Action("GetAllPostsByCategoryId", new { id = 6 })" class="btn btn-primary">View Posts</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+   
 
