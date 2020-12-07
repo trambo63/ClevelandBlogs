@@ -17,22 +17,7 @@
         @TempData["SaveResult"]
     </div>
 }
-@*<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ReplyId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CommentId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Content)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </th>
-        <th></th>
-    </tr>*@
+
 
     @foreach (var item in Model)
     {
@@ -56,11 +41,11 @@
                                 @Html.ActionLink("Edit", "Edit", new { id = item.ReplyId })
                             </a>
                         </div>
-                        <div class"col-sm-4">
+                        @*<div class"col-sm-4">
                             <a>
                                 @Html.ActionLink("Details", "Details", new { id = item.ReplyId })
                             </a>
-                        </div>
+                        </div>*@
                         <div>
                             <a class="social-link py-4 w-100">
                                 @Html.ActionLink("Delete", "Delete", new { id = item.ReplyId })
@@ -70,25 +55,5 @@
                 </aside>
             </div>
         </section>
-        @*<tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReplyId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CommentId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Content)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedUtc)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ReplyId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ReplyId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ReplyId })
-            </td>
-        </tr>*@
     }
 
-@*</table>*@
